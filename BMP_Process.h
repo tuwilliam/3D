@@ -43,4 +43,4 @@ typedef struct
 
 BMPImage* LoadImage(char* path);
 bool SaveImage(char* path, BMPImage* bmpImg);
-void BinaryImage(BMPImage* binaryImg, BMPImage* img1, BMPImage* img2);
+void BinaryImage(BMPImage* img1, BMPImage* img2);

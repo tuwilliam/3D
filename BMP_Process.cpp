@@ -135,9 +135,8 @@ bool SaveImage(char* path, BMPImage* bmpImg)
 	return true;
 }
 
-void BinaryImage(BMPImage* binaryImg, BMPImage* img1, BMPImage* img2) {
+void BinaryImage(BMPImage* img1, BMPImage* img2) {
 	long i;
-	*binaryImg = *img1;
 	for (i = 0; i < img1->width * img1->height; i++)
-		binaryImg->imageData[i] = (img1->imageData[i] > img2->imageData[i]) ? 255 : 0;
+		img1->imageData[i] = (img1->imageData[i] > img2->imageData[i]) ? 255 : 0;
 }

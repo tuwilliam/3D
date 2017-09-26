@@ -1,7 +1,3 @@
-﻿  BMP_Process.cpp
-c:\users\lenovo\desktop\imageprocessing\imageprocessing\bmp_process.cpp(17): warning C4101: 'k': unreferenced local variable
-c:\users\lenovo\desktop\imageprocessing\imageprocessing\bmp_process.cpp(15): warning C4101: 'pixVal': unreferenced local variable
-c:\users\lenovo\desktop\imageprocessing\imageprocessing\bmp_process.cpp(17): warning C4101: 'j': unreferenced local variable
-c:\users\lenovo\desktop\imageprocessing\imageprocessing\bmp_process.cpp(79): warning C4101: 'j': unreferenced local variable
+﻿  main.cpp
   imageProcessing.vcxproj -> C:\Users\lenovo\Desktop\imageProcessing\Debug\imageProcessing.exe
   imageProcessing.vcxproj -> C:\Users\lenovo\Desktop\imageProcessing\Debug\imageProcessing.pdb (Partial PDB)
