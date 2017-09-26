@@ -14,7 +14,7 @@ BMPImage* LoadImage(char* path)
 	int offset = 0;
 	unsigned char pixVal;
 	RgbQuad* quad;
-	int i, j, k;
+	long i, j, k;
 
 	bmpImg = (BMPImage*)malloc(sizeof(BMPImage));
 	pFile = fopen(path, "rb");
@@ -34,8 +34,10 @@ BMPImage* LoadImage(char* path)
 		if (bmpInfoHeader.biBitCount == 8)
 		{
 			channels = 1;
-			width = bmpInfoHeader.biWidth;
-			height = bmpInfoHeader.biHeight;
+			/*width = bmpInfoHeader.biWidth;
+			height = bmpInfoHeader.biHeight;*/
+			width = 640;
+			height = 480;
 			offset = (channels*width) % 4;
 			if (offset != 0)
 			{
@@ -51,7 +53,14 @@ BMPImage* LoadImage(char* path)
 			quad = (RgbQuad*)malloc(sizeof(RgbQuad) * 256);
 			fread(quad, sizeof(RgbQuad), 256, pFile);
 			free(quad);
-			fread(bmpImg->imageData, 1, width*height, pFile);	//reverse image
+			//fread(bmpImg->imageData, 1, width*height, pFile);
+			fseek(pFile, 740 * 2592 + 300, SEEK_CUR);
+			fread(bmpImg->imageData, 1, 640, pFile);
+			for (i = 0; i < 479; i++) {
+				fseek(pFile, 2592 - 640, SEEK_CUR);
+				fread(bmpImg->imageData + 640 * (i+1), 1, 640, pFile);	//reverse image
+			}
+				
 		}
 	}
 
